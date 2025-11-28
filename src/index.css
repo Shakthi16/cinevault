@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StreamHub Design System - Modern, Minimalist Streaming Platform */
+
+@layer base {
+  :root {
+    /* Modern Dark Minimal Theme */
+    --background: 0 0% 8%;
+    /* Almost pure black #141414 */
+    --foreground: 0 0% 98%;
+    /* Bright white #FAFAFA */
+
+    /* Card & Surfaces */
+    --card: 0 0% 12%;
+    /* Dark grey #1E1E1E */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Brand Colors - Vibrant Accent & Cyan */
+    --primary: 199 89% 48%;
+    /* Vibrant Cyan #0EA5E9 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 85% 50%;
+    /* Deep Purple #8B5CF6 */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 24 95% 53%;
+    /* Warm Coral #FF6B35 */
+    --accent-foreground: 0 0% 100%;
+
+    /* Premium Electric */
+    --premium: 199 100% 50%;
+    --premium-foreground: 0 0% 100%;
+
+    /* Muted States */
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+
+    /* Custom Design Tokens - Modern Minimal */
+    --gradient-primary: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
+    --gradient-hero: linear-gradient(180deg, transparent 0%, #141414 80%);
+    --gradient-accent: linear-gradient(135deg, #FF6B35 0%, #0EA5E9 100%);
+
+    --shadow-glow-primary: 0 0 25px hsl(199 89% 48% / 0.2);
+    --shadow-glow-secondary: 0 0 25px hsl(280 85% 50% / 0.2);
+    --shadow-glow-accent: 0 0 25px hsl(24 95% 53% / 0.2);
+    --shadow-premium: 0 20px 40px -10px hsl(199 89% 48% / 0.2);
+
+    --blur-backdrop: blur(10px);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  :root {
+    /* Fallback color scheme */
+    --card-foreground: 45 20% 90%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 45 20% 90%;
+
+    --primary: 45 60% 50%;
+    /* Metallic Gold */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 240 5% 15%;
+    /* Dark Zinc/Industrial Grey */
+    --secondary-foreground: 45 20% 90%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 45 30% 20%;
+    /* Dark Gold/Bronze */
+    --accent-foreground: 45 60% 50%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 20% 95%;
+
+    --border: 240 5% 15%;
+    /* Subtle Zinc border */
+    --input: 240 5% 15%;
+    --ring: 45 60% 50%;
+    /* Gold Ring */
+
+    --radius: 0rem;
+    /* Sharp edges for Editorial look */
+
+    /* Custom Vault Colors */
+    --gold-metallic: #D4AF37;
+    --obsidian: #050505;
+    --platinum: #E5E4E2;
+  }
+
+  /* Film Grain Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Editorial Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+  }
+
+  .light {
+    /* Base Colors - Light Theme */
+    --background: 0 0% 100%;
+    /* Pure White */
+    --foreground: 240 10% 4%;
+    /* Almost Black */
+
+    /* Card & Surfaces */
+    --card: 0 0% 96%;
+    /* Light Gray */
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    /* Brand Colors */
+    --primary: 262 83% 58%;
+    /* Royal Purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 89% 48%;
+    /* Ocean Blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 47 95% 57%;
+    /* Gold */
+    --accent-foreground: 240 10% 4%;
+
+    /* Muted States */
+    --muted: 240 5% 90%;
+    --muted-foreground: 240 4% 40%;
+
+    /* Borders & Inputs */
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 262 83% 58%;
+
+    --shadow-glow-primary: 0 0 20px hsl(262 83% 58% / 0.2);
+    --shadow-glow-secondary: 0 0 20px hsl(199 89% 48% / 0.2);
+    --shadow-glow-gold: 0 0 20px hsl(47 95% 57% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-bold;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer utilities {
+
+  /* Glassmorphism */
+  .glass {
+    backdrop-filter: var(--blur-backdrop);
+    background: hsl(30 25% 11% / 0.75);
+    border: 1px solid hsl(24 95% 53% / 0.15);
+  }
+
+  /* Premium gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-gold {
+    background: var(--gradient-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--shadow-glow-secondary);
+  }
+
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-lg border border-primary/15 shadow-xl;
+  }
+
+  /* Text shadows */
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(239, 109, 47, 0.5);
+    /* Warm Orange Glow */
+  }
+
+  /* Glow effects - Warm theme */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(239, 109, 47, 0.3);
+  }
+
+  /* Warm Orange Text Gradient */
+  .warm-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#EF6D2F] via-[#DC6F48] to-[#EF6D2F];
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Pyramid Loader */
+.pyramid-loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.pyramid-loader .wrapper .side {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader .wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8B5AD5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
