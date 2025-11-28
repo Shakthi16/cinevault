@@ -11,7 +11,7 @@ CineVault is a premium movie streaming application interface designed with a foc
 
 ## Architecture Diagram
 
-[View on Eraser![](https://app.eraser.io/workspace/7WLkpoCHYQML9ViiV136/preview?elements=lrrk-2bXeApO8_MQJX2tlg&type=embed)](https://app.eraser.io/workspace/7WLkpoCHYQML9ViiV136?elements=lrrk-2bXeApO8_MQJX2tlg)
+![Architecture Diagram](./src/diagram.png)
 
 ## Technology Stack
 - **Framework**: React (Vite)
